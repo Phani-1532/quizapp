@@ -2,6 +2,9 @@ import './App.css';
 import Questions from './Questions.json';
 import Display from './Display';
 import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Browse from './Browse';
+import Explanation from './Explanation';
 
 function App() {
   const [marks, setMarks] = useState(Array(Questions.length).fill(0)); // Initialize with zeros
@@ -49,6 +52,12 @@ function App() {
             <p>{score >= 20 ? "Great job! You're a quiz master!" : "Better luck next time!"}</p>
             <button className="restart-btn" onClick={() => window.location.reload()}>Restart Quiz</button>
             <button className="close-btn" onClick={closeModal}>Close</button>
+            <BrowserRouter>
+            <Browse />
+                    <Routes>
+                        <Route path='/explanation' element={<Explanation />}></Route>
+                    </Routes>
+                </BrowserRouter>
           </div>
         </div>
       )}

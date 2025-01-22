@@ -1,0 +1,46 @@
+.explanation-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .explanation-container h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50; /* Dark blue for better readability */
+    margin-bottom: 10px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .explanation-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e; /* Slightly lighter blue for contrast */
+    margin-bottom: 20px;
+  }
+  
+  .explanation-container hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ff6b6b, #ffdf91); /* Gradient for visual pop */
+    margin: 20px 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .explanation-container {
+      padding: 15px;
+    }
+  
+    .explanation-container h3 {
+      font-size: 1rem;
+    }
+  
+    .explanation-container p {
+      font-size: 0.8rem;
+    }
+  }
+  

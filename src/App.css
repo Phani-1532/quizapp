@@ -80,6 +80,8 @@
   color: #ffdf91;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 h2 {
