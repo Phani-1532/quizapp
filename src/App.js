@@ -15,7 +15,7 @@ function App() {
          </div>
         )
       })}
-     
+      <button type='btn' className='btn' onClick={endQuiz}> End Quiz </button>
     </>
   );
 }
