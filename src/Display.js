@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Display({question, index, endQuiz}) {
+function Display({question, index, changeHandler}) {
     function optionChange(e){
         const temp = e.target.value === question.answer ? 1 : 0;
-        endQuiz(temp)
+        changeHandler(temp, index)
     }
   return (
     <>

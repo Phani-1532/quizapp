@@ -17,7 +17,7 @@
   font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(10, 216, 213, 0.2);
   &:hover{
     background-color: rgb(4, 112, 112);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
