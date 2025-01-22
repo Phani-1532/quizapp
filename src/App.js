@@ -4,36 +4,55 @@ import Display from './Display';
 import { useState } from 'react';
 
 function App() {
-  let arr = [];
-  const [marks, setMarks] = useState([]);
-  
+  const [marks, setMarks] = useState(Array(Questions.length).fill(0)); // Initialize with zeros
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [score, setScore] = useState(0);
+
   const changeHandler = (value, index) => {
-    arr = marks;
-    arr[index] = value;
-    setMarks([...arr]);
+    // Update the marks array at the specific index
+    const updatedMarks = [...marks];
+    updatedMarks[index] = value;
+    setMarks(updatedMarks); // Update the state with the new marks array
   };
 
   const handleQuizEnd = () => {
-    alert(marks.reduce((a, b) => a + b, 0) + '/30');
+    // Calculate the total score by summing up the marks
+    const totalScore = marks.reduce((acc, currentValue) => acc + currentValue, 0);
+    setScore(totalScore);
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
     <>
       <div>
-      <h1 className="heading">🌟 Ultimate Quiz Challenge 🌟</h1>
-      {Questions.map((question, index) => (
-        <div key={index}>
-          <Display question={question} index={index} changeHandler={changeHandler} />
+        <h1 className="heading">🌟 Ultimate Quiz Challenge 🌟</h1>
+        {Questions.map((question, index) => (
+          <div key={index}>
+            <Display question={question} index={index} changeHandler={changeHandler} />
+          </div>
+        ))}
+      </div>
+      <div className="container">
+        <button type="button" className="btn" onClick={handleQuizEnd}>
+          End Quiz
+        </button>
+      </div>
+
+      {isModalOpen && (
+        <div className={`modal ${isModalOpen ? 'show' : ''}`}>
+          <div className="modal-content">
+            <h2>Your Score: {score}/30</h2>
+            <p>{score >= 20 ? "Great job! You're a quiz master!" : "Better luck next time!"}</p>
+            <button className="restart-btn" onClick={() => window.location.reload()}>Restart Quiz</button>
+            <button className="close-btn" onClick={closeModal}>Close</button>
+          </div>
         </div>
-      ))}
-      </div>
-      <div className='container'>
-      <button type="button" className="btn" onClick={handleQuizEnd}>
-        End Quiz
-      </button>
-      </div>
+      )}
     </>
-   
   );
 }
 
