@@ -1,4 +1,5 @@
 import React from 'react'
+import './Display.css'
 
 function Display({question, index, changeHandler}) {
     function optionChange(e){

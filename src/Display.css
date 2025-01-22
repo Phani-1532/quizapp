@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4c4177, #2a5470);
+    color: #ffffff;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .alignLeft {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .alignLeft:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  .alignLeft h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffdf91;
+  }
+
+  .alignLeft div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    gap: 15px;
+  }
+  
+  .alignLeft label {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .alignLeft input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffdf91;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .alignLeft input[type="radio"]:checked {
+    background-color: #ffdf91;
+    box-shadow: 0 0 10px 4px rgba(255, 223, 145, 0.6);
+  }
+  
+  .alignLeft input[type="radio"] + label {
+    font-size: 1rem;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  
+  .alignLeft input[type="radio"]:checked + label {
+    color: #ffdf91;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .alignLeft {
+      padding: 15px;
+    }
+  
+    .alignLeft h3 {
+      font-size: 1.3rem;
+    }
+  
+    .alignLeft div {
+      gap: 10px;
+    }
+  
+    .alignLeft input[type="radio"] {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .alignLeft label {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .alignLeft h3 {
+      font-size: 1.1rem;
+    }
+  
+    .alignLeft div {
+      flex-wrap: wrap; 
+      gap: 10px;
+    }
+  
+    .alignLeft label {
+      flex-direction: row; 
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+  
+    .alignLeft input[type="radio"] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 372px) {
+    .alignLeft h3 {
+      font-size: 1rem;
+    }
+  
+    .alignLeft div {
+      flex-wrap: wrap; 
+      gap: 5px;
+    }
+  
+    .alignLeft label {
+      display: flex;
+      flex-direction: row; 
+      align-items: center; 
+      gap: 5px;
+      font-size: 0.8rem;
+    }
+  
+    .alignLeft input[type="radio"] {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
